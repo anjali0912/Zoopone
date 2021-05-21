@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactFragment">
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.zooponedemo.ui.contact.ContactFragment"
+        android:label="contact_fragment"
+        tools:layout="@layout/fragment_contact">
+        <action
+            android:id="@+id/navigate_to_contact_detail"
+            app:destination="@id/second_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="com.example.zooponedemo.ui.contact.SecondFragment"
+        android:label="Second Fragment"
+        tools:layout="@layout/fragment_second">
+        <argument
+            android:name="arg"
+            app:argType="com.example.zooponedemo.data.db.entity.SenderEntity" />
+        <action
+            android:id="@+id/navigate_to_third_fragment"
+            app:destination="@id/third_fragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/third_fragment"
+        android:name="com.example.zooponedemo.ui.contact.ThirdFragment"
+        android:label="Third Fragment"
+        tools:layout="@layout/fragment_third">
+        <argument
+            android:name="arg1"
+            app:argType="com.example.zooponedemo.data.db.entity.SenderEntity" />
+        <argument
+            android:name="arg2"
+            app:argType="string"/>
+        <action
+            android:id="@+id/navigate_to_first_fragment"
+            app:destination="@id/contactFragment"
+            app:popUpTo="@+id/contactFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

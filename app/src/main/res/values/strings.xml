@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZoopOneDemo</string>
+    <string name="not_match_found_for_you">No match found for you!</string>
+</resources>
